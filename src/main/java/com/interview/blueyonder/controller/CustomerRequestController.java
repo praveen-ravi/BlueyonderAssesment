@@ -13,6 +13,11 @@ import java.io.IOException;
 public class CustomerRequestController {
     @Autowired
     CustomerServices customerServices;
+
+    public void setCustomerServices(CustomerServices customerServices) {
+        this.customerServices = customerServices;
+    }
+
     @RequestMapping(method = RequestMethod.POST,value = "/customers")
     public ResponseEntity<String> pushCustomerRecord(@RequestBody Customer customer){
         ResponseEntity<String> response =null;
